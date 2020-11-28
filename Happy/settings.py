@@ -1,4 +1,5 @@
-import os, django_heroku
+import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -148,17 +149,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),)
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 MEDIA_URL = '/media/' 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = 'media/'
 
-
-
-LOGIN_REDIRECT_URL='index'
-LOGOUT_REDIRECT_URL='index'
-
+# Activate Django-Heroku.
 django_heroku.settings(locals())
