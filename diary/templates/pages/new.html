@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div style="font-family:cursive; font-size:20px; font-weight:bold;">
+<form  method="POST" action="{% url 'new' %}">
+      {% csrf_token %}
+      {{ form.media }}
+      {{ form.as_p }}
+      <button class="btn btn-black btn-block my-2" type="submit">Post</button>
+<a href="{% url 'index' %}" type="button" class="btn btn-black btn-block">Back</a>
+
+</form>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="text-center" style="font-family:cursive; font-size:70px; font-weight:bold;" >
+<p>Bharat Naik</p>
+</div>
+
+<div class="container" style="font-family:cursive; font-size:20px; font-weight:bold;">
+      <div class="card">
+            <a href="{% url 'new' %}" type="button" class="butt btn btn-black">Write</a>
+           
+      <ul class="list-group">
+            {% for post in posts reversed %}
+                        <li class="list-group-item kite">
+                        
+                              <a  href="{{post.id}}" >
+                             {{post.name}}  {{post.created_at}}
+                              </a>
+                        </li>
+                   {% endfor %}
+                   </ul>
+                   
+         
+</div>
+</div>
+
+
+{% else %}
+
+<h1 style="font-family:cursive; font-size:70px; font-weight:bold;">Welcome, Bharat Naik</h1>
+
+{% endif %}
+
+{% endblock %}
+
+
